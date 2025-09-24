@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COMP3123 - Express JS Exercise 04</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .endpoint {
+            background-color: #f4f4f4;
+            padding: 10px;
+            margin: 10px 0;
+            border-left: 4px solid #007acc;
+        }
+        .method {
+            font-weight: bold;
+            color: #007acc;
+        }
+    </style>
+</head>
+<body>
+    <h1>COMP3123 - Express JS Exercise 04 Instructions</h1>
+    <h2>Student ID: 101414035</h2>
+
+    <h3>Available Endpoints:</h3>
+
+    <div class="endpoint">
+        <div class="method">GET /hello</div>
+        <p>Returns "Hello Express JS" as plain text.</p>
+        <p><strong>Example:</strong> GET http://localhost:3000/hello</p>
+    </div>
+
+    <div class="endpoint">
+        <div class="method">GET /user</div>
+        <p>Returns user data using query parameters for firstname and lastname.</p>
+        <p>Defaults to "Pritesh" and "Patel" if parameters are not provided.</p>
+        <p><strong>Example:</strong> GET http://localhost:3000/user?firstname=John&lastname=Doe</p>
+    </div>
+
+    <div class="endpoint">
+        <div class="method">POST /user/:firstname/:lastname</div>
+        <p>Returns user data using path parameters for firstname and lastname.</p>
+        <p><strong>Example:</strong> POST http://localhost:3000/user/John/Doe</p>
+    </div>
+
+    <div class="endpoint">
+        <div class="method">POST /users</div>
+        <p>Returns an array of users. Accepts body parameter for array of users with firstname and lastname.</p>
+        <p>Returns default users if no body is provided.</p>
+        <p><strong>Example:</strong> POST http://localhost:3000/users</p>
+        <p><strong>Body example:</strong> {"users": [{"firstname": "John", "lastname": "Smith"}]}</p>
+    </div>
+
+    <h3>How to Test:</h3>
+    <ol>
+        <li>Start the server: <code>npm start</code> or <code>node server.js</code></li>
+        <li>Use Postman or any API testing tool to test the endpoints</li>
+        <li>This instruction page is accessible at: <code>http://localhost:3000/instruction.html</code></li>
+    </ol>
+</body>
+</html>
