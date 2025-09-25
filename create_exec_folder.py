@@ -3,7 +3,7 @@ import sys
 import os
 
 def create_folder(exec_number):
-    folder_name = f"101414035_COMP3123-exec{exec_number:02d}"
+    folder_name = f"exec{exec_number}"
 
     try:
         os.makedirs(folder_name, exist_ok=True)
@@ -20,17 +20,8 @@ def main():
         print("Example: python create_exec_folder.py 01")
         sys.exit(1)
 
-    try:
-        exec_number = int(sys.argv[1])
-        if exec_number < 1 or exec_number > 99:
-            print("Error: exec_number must be between 1 and 99")
-            sys.exit(1)
-
-        create_folder(exec_number)
-
-    except ValueError:
-        print("Error: Please provide a valid number")
-        sys.exit(1)
+    exec_number = sys.argv[1]
+    create_folder(exec_number)
 
 if __name__ == "__main__":
     main()

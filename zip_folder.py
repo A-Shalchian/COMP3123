@@ -7,7 +7,8 @@ def zip_folder(folder_path):
     if not os.path.isdir(folder_path):
         print(f"Error: {folder_path} is not a valid directory.")
         return
-    zip_filename = os.path.basename(os.path.normpath(folder_path)) + '.zip'
+    folder_name = os.path.basename(os.path.normpath(folder_path))
+    zip_filename = f'101414035_COMP3123-{folder_name}.zip'
     with zipfile.ZipFile(zip_filename, 'w', zipfile.ZIP_DEFLATED) as zipf:
         for root, dirs, files in os.walk(folder_path):
             for file in files:
